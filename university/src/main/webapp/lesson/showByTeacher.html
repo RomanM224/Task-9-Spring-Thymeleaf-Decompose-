@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update lesson</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div th:insert="fragments/navigationBar.html :: navigationBar"></div>
+	<div class="container m-2">
+		<form class="form-group" th:action="@{/lesson/showByTeacher}" th:method="post">
+			<label>Select teacher: </label>
+			<select class="form-control col-3" name="id">
+				<option th:each="teacher : ${teachers}" th:value="${teacher.getId()}" th:text="${teacher.getFullName()}" />
+			</select> 
+			<label for="startDate">Input start date: </label>
+			<input class="form-control col-3" id="startDate" type="date" name="startDate"/>
+			<label for="finishDate">Input start date: </label>
+			<input class="form-control col-3" id="finishDate" type="date" name="finishDate"/>
+			<input class="btn btn-primary mt-2" type="submit" value="Get lessons"/>
+		</form>
+	</div>
+	<p class="container m-2 text-danger" th:text="${info}"></p>
+	
+	
+</body>
+</html>

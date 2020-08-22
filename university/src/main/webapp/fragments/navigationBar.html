@@ -1,0 +1,74 @@
+<th:block xmlns:th="http://www.thymeleaf.org" th:fragment="navigationBar">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+		<a class="navbar-brand" th:href="@{~/university}">University</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Student </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/student/showAll}">Show all students</a>
+							<a class="dropdown-item" th:href="@{~/university/student/getById}">Show student by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/student/create}">Create student</a>
+							<a class="dropdown-item" th:href="@{~/university/student/update}">Update student</a>
+							<a class="dropdown-item" th:href="@{~/university/student/delete}">Delete student</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Group </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/group/showAll}">Show all groups</a> 
+							<a class="dropdown-item" th:href="@{~/university/group/getById}">Show group by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/group/create}">Create group</a>
+							<a class="dropdown-item" th:href="@{~/university/group/update}">Update group</a>
+							<a class="dropdown-item" th:href="@{~/university/group/delete}">Delete group</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Course </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/course/showAll}">Show all course</a> 
+							<a class="dropdown-item" th:href="@{~/university/course/getById}">Show course by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/course/create}">Create course</a>
+							<a class="dropdown-item" th:href="@{~/university/course/update}">Update course</a>
+							<a class="dropdown-item" th:href="@{~/university/course/delete}">Delete course</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Teacher </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/teacher/showAll}">Show all teachers</a> 
+							<a class="dropdown-item" th:href="@{~/university/teacher/getById}">Show teacher by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/teacher/create}">Create teacher</a>
+							<a class="dropdown-item" th:href="@{~/university/teacher/update}">Update teacher</a>
+							<a class="dropdown-item" th:href="@{~/university/teacher/delete}">Delete teacher</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Lesson </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/lesson/showAll}">Show all lessons</a> 
+							<a class="dropdown-item" th:href="@{~/university/lesson/getById}">Show lesson by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/lesson/create}">Crate lesson</a>
+							<a class="dropdown-item" th:href="@{~/university/lesson/update}">Update lesson</a>
+							<a class="dropdown-item" th:href="@{~/university/lesson/delete}">Delete lesson</a>
+							<a class="dropdown-item" th:href="@{~/university/lesson/showByGroup}">Show lessons by group</a>
+							<a class="dropdown-item" th:href="@{~/university/lesson/showByTeacher}">Show lessons by teacher</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Auditory </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/auditory/showAll}">Show all auditory</a> 
+							<a class="dropdown-item" th:href="@{~/university/auditory/getById}">Show auditory by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/auditory/create}">Crate auditory</a>
+							<a class="dropdown-item" th:href="@{~/university/auditory/update}">Update auditory</a>
+							<a class="dropdown-item" th:href="@{~/university/auditory/delete}">Delete auditory</a>
+						</div></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Time Table </a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" th:href="@{~/university/timetable/showAll}">Show all time table</a> 
+							<a class="dropdown-item" th:href="@{~/university/timetable/getById}">Show time table by Id</a>
+							<a class="dropdown-item" th:href="@{~/university/timetable/create}">Crate time table</a>
+							<a class="dropdown-item" th:href="@{~/university/timetable/update}">Update time table</a>
+							<a class="dropdown-item" th:href="@{~/university/timetable/delete}">Delete time table</a>
+						</div></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</th:block>

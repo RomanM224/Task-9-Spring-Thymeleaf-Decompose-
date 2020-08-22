@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create lesson</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div th:insert="fragments/navigationBar.html :: navigationBar"></div>
+
+	<div class="container m-2">
+		<form class="form-group" th:action="@{/lesson/create}" th:method="post">
+			<label>Select group: </label>
+			<select class="form-control col-3" name="groupId1">
+				<option th:each="group : ${groups}" th:value="${group.getId()}" th:text="${group.getName()}" />
+			</select> 
+			<label>Select course: </label>
+			<select class="form-control col-3" name="courseId">
+				<option th:each="course : ${courses}" th:value="${course.getId()}" th:text="${course.getName()}" />
+			</select> 
+			<label>Select teacher: </label>
+			<select class="form-control col-3" name="teacherId">
+				<option th:each="teacher : ${teachers}" th:value="${teacher.getId()}" th:text="${teacher.getFullName()}" />
+			</select> 
+			<label>Select auditory: </label>
+			<select class="form-control col-3" name="auditoryId">
+				<option th:each="auditory : ${auditories}" th:value="${auditory.getId()}" th:text="${auditory.getNumber()}" />
+			</select> 
+			<label>Select time tables: </label>
+			<select class="form-control col-3" name="timeTableId">
+				<option th:each="timeTable : ${timeTables}" th:value="${timeTable.getId()}" th:text="${{timeTable.getStartTime() + ' ' + timeTable.getFinishTime()}}" />
+			</select> 
+			<label for="date">Input date: </label>
+			<input class="form-control col-3" id="date" type="date" name="date"/>
+			<input class="btn btn-primary mt-2" type="submit" value="Create" />
+		</form>
+	</div>
+	<p class="container m-2 text-danger" th:text="${info}"></p>
+
+</body>
+</html>

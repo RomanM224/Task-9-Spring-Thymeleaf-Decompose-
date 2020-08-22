@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show lessons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div th:insert="fragments/navigationBar.html :: navigationBar"></div>
+
+	<div class="container">
+		<h3>Lessons:</h3>
+		<table class="table" id="each">
+			<thead class="thead-dark">
+				<tr>
+					<th>id</th>
+					<th>Group</th>
+					<th>Course</th>
+					<th>Teacher</th>
+					<th>Auditory</th>
+					<th>Start Time</th>
+					<th>Finish Time</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tr th:each="lesson : ${lessons}">
+				<td th:text="${lesson.getId()}"></td>
+				<td th:text="${lesson.getGroup().getName()}"></td>
+				<td th:text="${lesson.getCourse().getName()}"></td>
+				<td th:text="${lesson.getTeacher().getFullName()}"></td>
+				<td th:text="${lesson.getAuditory().getNumber()}"></td>
+				<td th:text="${lesson.getTimeTable().getStartTime()}"></td>
+				<td th:text="${lesson.getTimeTable().getFinishTime()}"></td>
+				<td th:text="${lesson.getDate()}"></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

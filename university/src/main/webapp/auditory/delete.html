@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete auditory by id</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div th:insert="fragments/navigationBar.html :: navigationBar"></div>
+
+	<div class="container m-2">
+		<form class="form-inline" th:action="@{/auditory/delete}" th:method="post">
+			<label class="col-2" for="id">Input auditory id: </label> <input class="form-control col-2" id="id" type="number" name="id" /> <input
+				class="btn btn-primary m-2" type="submit" value="Delete" />
+		</form>
+	</div>
+		<p class="container m-2 text-danger" th:text="${info}"></p>
+</body>
+</html>
